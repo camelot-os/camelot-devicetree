@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2023 PSICONTROL nv
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <st/u5/stm32u595.dtsi>
+
+/ {
+	soc {
+		ltdc0: ltdc@40016800 {
+			compatible = "st,stm32-ltdc";
+			reg = <0x40016800 0x400>;
+			clocks = <&rcc STM32_CLOCK_BUS_APB2 0x04000000>;
+			interrupts = <135 0>, <136 0>;
+			interrupt-names = "global", "err";
+			status = "disabled";
+
+			/* defined binding to MIPI bridge */
+		};
+
+		dsi0: dsi@40016C00 {
+			compatible = "synopsys,mipi-dsi";
+			reg = <0x40016C00 0x1000>;
+			clocks = <&rcc STM32_CLOCK_BUS_APB2 0x08000000>;
+			interrupts = <137 0>;
+			interrupt-names = "global";
+			status = "disabled";
+
+			/* defined binding to LCD interface */
+
+			panel0: panel@0 {
+				/* TODO: Add a dummy default panel config */
+				status = "disabled";
+			};
+		};
+	};
+};

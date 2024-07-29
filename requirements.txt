@@ -1,0 +1,5 @@
+swig
+dts-utils>=0.2.0
+
+# XXX: re-enable this once there arn't using deprecated jsconschema anymore
+# dtschema
