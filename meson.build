@@ -22,7 +22,9 @@ project(
     'devicetree', 'c',
     meson_version: '>=1.3.0',
     version: run_command('dunamai', 'from', 'git', '--style', 'semver', '--dirty', check: true)
-             .stdout().strip()
+             .stdout().strip(),
+    license: 'Apache-2.0',
+    license_files: ['LICENSES/Apache-2.0.txt'],
 )
 
 fs = import('fs')
