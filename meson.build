@@ -126,6 +126,9 @@ devicetree_dtsd = custom_target('devicetree-dtsd',
         '-MT', '@INPUT@',
         '-MMD',  '-MF', '@DEPFILE@',
         '-o', '@OUTPUT@'],
+    install: get_option('install'),
+    install_tag: 'devel',
+    install_dir: get_option('datadir'),
 )
 
 devicetree_dts = custom_target('devicetree-dts',
