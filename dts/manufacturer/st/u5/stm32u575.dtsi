@@ -24,6 +24,13 @@
 			phys = <&otgfs_phy>;
 			status = "disabled";
 		};
+
+		dma2d: gpu@4002b000 {
+			compatible = "st,stm32-dma2d";
+			reg = <0x4002b000 0xC00>;
+			clocks = <&rcc STM32_CLOCK_BUS_AHB1 0x00040000>;
+			status = "disabled";
+		};
 	};
 
 	otgfs_phy: otgfs_phy {
