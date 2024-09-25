@@ -143,6 +143,11 @@
 			};
 		};
 
+        syscfg: system-config@58000400 {
+            compatible = "st,stm32h7-syscfg", "syscon";
+            reg = <0x58000400 0x400>;
+        };
+
 		exti: interrupt-controller@58000000 {
 			compatible = "st,stm32-exti";
 			interrupt-controller;
