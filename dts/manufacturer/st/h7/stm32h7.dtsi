@@ -22,10 +22,6 @@
 #include <freq.h>
 
 / {
-	chosen {
-		zephyr,entropy = &rng;
-		zephyr,flash-controller = &flash;
-	};
 
 	cpus {
 		#address-cells = <1>;
@@ -47,10 +43,8 @@
 	};
 
 	quadspi_memory: memory@90000000 {
-		compatible = "zephyr,memory-region", "mmio-sram";
+		compatible = "mmio-sram";
 		reg = <0x90000000 DT_SIZE_M(256)>;
-		zephyr,memory-region = "QSPI";
-		zephyr,memory-attr = <( DT_MEM_ARM(ATTR_MPU_EXTMEM) )>;
 	};
 
 	clocks {
@@ -99,7 +93,7 @@
 			status = "disabled";
 		};
 
-		pll: pll@0 {
+		pll1: pll@0 {
 			#clock-cells = <0>;
 			compatible = "st,stm32h7-pll-clock";
 			reg = <0>;
@@ -999,10 +993,9 @@
 		};
 
 		backup_sram: memory@38800000 {
-			compatible = "zephyr,memory-region", "st,stm32-backup-sram";
+			compatible = "st,stm32-backup-sram";
 			reg = <0x38800000 DT_SIZE_K(4)>;
 			clocks = <&rcc STM32_CLOCK_BUS_AHB4 0x10000000>;
-			zephyr,memory-region = "BACKUP_SRAM";
 			status = "disabled";
 		};
 

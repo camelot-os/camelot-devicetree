@@ -6,7 +6,7 @@
 #ifndef ZEPHYR_INCLUDE_DT_BINDINGS_MEM_ATTR_H_
 #define ZEPHYR_INCLUDE_DT_BINDINGS_MEM_ATTR_H_
 
-#include <zephyr/sys/util_macro.h>
+//#include <zephyr/sys/util_macro.h>
 
 /*
  * Generic memory attributes.
