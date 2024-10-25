@@ -38,7 +38,7 @@ dtc = find_program('dtc')
 #      This is disabled until dtschema bump
 # dt_validate = find_program('dt-validate')
 
-dts2src = find_program('dts2src')
+dts2src = find_program('dts2src', version: '>= 0.3.0')
 
 # dts input file search path order:
 # - Path is absolute
