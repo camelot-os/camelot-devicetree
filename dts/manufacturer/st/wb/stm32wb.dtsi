@@ -156,7 +156,10 @@
 				max-erase-time = <25>;
 			};
 		};
-
+		syscfg: system-config@40010000 {
+			compatible = "st,stm32-syscfg", "syscon";
+			reg = <0x40010000 0x200>;
+		};
 		rcc: rcc@58000000 {
 			compatible = "st,stm32wb-rcc";
 			#clock-cells = <2>;
