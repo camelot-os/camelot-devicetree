@@ -6,9 +6,6 @@
 #ifndef ZEPHYR_INCLUDE_DT_BINDINGS_MEM_ATTR_ARM_H_
 #define ZEPHYR_INCLUDE_DT_BINDINGS_MEM_ATTR_ARM_H_
 
-#include <zephyr/sys/util_macro.h>
-#include <zephyr/dt-bindings/memory-attr/memory-attr.h>
-
 /*
  * Architecture specific ARM MPU related attributes.
  *
