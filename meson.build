@@ -58,6 +58,9 @@ if not fs.exists(devicetree_in)
     error('Cannot find DTS file', devicetree_in)
 endif
 
+subdir('include')
+subdir('dts')
+
 devicetree_include_dirs = get_option('dts-include-dirs')
 devicetree_bindings_dir = fs.expanduser(get_option('dts-bindings-dir'))
 
