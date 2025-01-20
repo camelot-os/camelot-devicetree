@@ -14,8 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+if get_option('install')
+
 install_subdir(
   'dt-bindings',
   install_dir: get_option('includedir'),
   install_tag: 'devel',
 )
+
+endif
