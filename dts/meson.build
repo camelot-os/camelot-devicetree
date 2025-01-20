@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+if get_option('install')
+
 install_subdir(
   'arch',
   install_dir: get_option('datadir') + '/dts',
@@ -31,3 +33,5 @@ install_subdir(
   install_dir: get_option('datadir') + '/dts',
   install_tag: 'devel',
 )
+
+endif
