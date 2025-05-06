@@ -1,8 +1,9 @@
 # SPDX-FileCopyrightText: 2024 Ledger SAS
+# SPDX-FileCopyrightText: 2025 H2Lab
 #
 # SPDX-License-Identifier: Apache-2.0
 
-swig
+meson>=1.4.0
 dts-utils>=0.3.0
 
 # XXX: re-enable this once there arn't using deprecated jsconschema anymore
