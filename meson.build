@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # Copyright 2023 Ledger SAS
+# Copyright 2025 H2Lab
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,11 +21,13 @@
 #   We must define the project as a `C` project to get a working `C` compiler.
 project(
     'devicetree', 'c',
-    meson_version: '>=1.3.0',
+    meson_version: '>=1.4.0',
     version: run_command('support/meson/version.sh', 'get-vcs', check: true).stdout().strip(),
     license: 'Apache-2.0',
     license_files: ['LICENSES/Apache-2.0.txt'],
 )
+
+meson.add_dist_script('support/meson/version.sh', 'set-dist', meson.project_version())
 
 fs = import('fs')
 pymod =  import('python')
