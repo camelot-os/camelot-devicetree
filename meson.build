@@ -169,6 +169,11 @@ alias_target('dts',
 #     command: [dt_validate, '-s', devicetree_bindings_dir, '-m', '-n', devicetree_dtb]
 # )
 
+# in order to allow sdist production, a sample dts file, which can also be used as an example
+# is called so that this project can delivers its own release without the need for external
+# caller
+install_data('support/meson/sample.dts', rename : 'dts-sample.dts')
+
 summary(
     {
         'dts': devicetree_in,
