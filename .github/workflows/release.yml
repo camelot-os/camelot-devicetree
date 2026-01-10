@@ -27,9 +27,8 @@ jobs:
           fetch-tags: true
           set-safe-directory: true
       - name: install prerequisites pkg
-        uses: camelot-os/action-install-pkg@v1
-        with:
-          packages: 'device-tree-compiler'
+        run: |
+          sudo apt-get -y install 'device-tree-compiler'
       - name: deploy local deps
         run: |
           pip3 install -r requirements.txt
