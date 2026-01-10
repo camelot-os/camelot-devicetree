@@ -38,8 +38,8 @@ jobs:
         shell: bash
       - uses: actions/upload-artifact@v4
         with:
-          name: kadoc
-          path: builddir/meson-dist/kadoc-*.*
+          name: devicetree
+          path: builddir/meson-dist/devicetree-*.*
 
   publish_release:
     needs: dist
