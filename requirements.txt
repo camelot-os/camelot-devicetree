@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 meson>=1.4.0
+swig
 dts-utils>=0.3.0
 
 # XXX: re-enable this once there arn't using deprecated jsconschema anymore

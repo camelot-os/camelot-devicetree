@@ -106,7 +106,7 @@ devicetree_bindings_dir = join_paths(meson.global_source_root(), 'include')
 # Copy script at configure time
 # The DTS file is copied in build tree and a depfile is created.
 # This is required by meson, which can work only w/ file inside the project sandbox.
-# In project integration mode, dts file is likely in outpost project top level directory
+# In project integration mode, dts file is likely in Camelot project top level directory
 devicetree_copy = '''
 import shutil
 import sys
@@ -171,6 +171,11 @@ alias_target('dts',
 #     depends: devicetree_dtb,
 #     command: [dt_validate, '-s', devicetree_bindings_dir, '-m', '-n', devicetree_dtb]
 # )
+
+# in order to allow sdist production, a sample dts file, which can also be used as an example
+# is called so that this project can delivers its own release without the need for external
+# caller
+install_data('support/meson/sample.dts', rename : 'dts-sample.dts', preserve_path: true)
 
 summary(
     {
