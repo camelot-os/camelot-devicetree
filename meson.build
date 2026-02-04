@@ -172,7 +172,7 @@ alias_target('dts',
 # in order to allow sdist production, a sample dts file, which can also be used as an example
 # is called so that this project can delivers its own release without the need for external
 # caller
-install_data('support/meson/sample.dts', rename : 'dts-sample.dts')
+install_data('support/meson/sample.dts', rename : 'dts-sample.dts', preserve_path: true)
 
 summary(
     {
